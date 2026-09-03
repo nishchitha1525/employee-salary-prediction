@@ -1,0 +1,21 @@
+Age,Gender,Education,Job_Title,Experience,Department,Salary
+22,Male,Bachelors,Junior Software Engineer,1,IT,32000
+24,Female,Bachelors,Web Developer,2,IT,38000
+25,Male,Bachelors,Software Engineer,3,IT,45000
+26,Female,Masters,Data Analyst,3,IT,48000
+27,Male,Bachelors,System Administrator,4,IT,50000
+28,Female,Bachelors,Software Engineer,4,IT,55000
+29,Male,Masters,Data Scientist,5,IT,65000
+30,Female,Masters,Project Manager,6,Management,70000
+31,Male,Bachelors,Senior Software Engineer,7,IT,75000
+32,Female,Masters,Data Scientist,7,IT,78000
+33,Male,Masters,Project Manager,8,Management,82000
+34,Female,Bachelors,Senior Web Developer,8,IT,80000
+35,Male,Masters,Senior Software Engineer,9,IT,88000
+36,Female,Masters,Data Scientist,10,IT,95000
+37,Male,Masters,Project Manager,11,Management,100000
+38,Female,Masters,Senior Data Scientist,12,IT,110000
+40,Male,Masters,Engineering Manager,14,Engineering,125000
+42,Female,PhD,Senior Data Scientist,15,IT,135000
+45,Male,PhD,Technology Director,18,Management,155000
+48,Female,PhD,Senior Technology Director,20,Management,175000
