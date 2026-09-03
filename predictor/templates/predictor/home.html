@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Salary Prediction</title>
+
+    <link rel="stylesheet"
+          href="{% static 'predictor/style.css' %}">
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            Employee Salary Prediction
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/predict/">Predict Salary</a>
+        </div>
+
+    </div>
+
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <h1>Employee Salary Prediction</h1>
+
+            <p>
+                Predict an employee's estimated salary
+                using Machine Learning.
+            </p>
+
+            <a href="/predict/" class="btn">
+                Predict Salary
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <h2>About the Project</h2>
+
+        <p>
+            Employee Salary Prediction is a machine learning
+            based web application that estimates an employee's
+            salary using information such as age, education,
+            job title, experience and department.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Machine Learning</h3>
+                <p>
+                    Random Forest Regression is used
+                    to predict employee salary.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Easy to Use</h3>
+                <p>
+                    Enter employee details and get
+                    an estimated salary.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Web Application</h3>
+                <p>
+                    Django is used to build the
+                    web application.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <p>Employee Salary Prediction Mini Project</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Salary Prediction</title>
+
+    <link rel="stylesheet"
+          href="{% static 'predictor/style.css' %}">
+
+</head>
+
+
+<body>
+
+    <div class="page">
+
+        <div class="prediction-card">
+
+            <!-- ============================= -->
+            <!-- HEADER -->
+            <!-- ============================= -->
+
+            <div class="header">
+
+                <h1>Employee Salary Prediction</h1>
+
+                <p>
+                    Enter employee information below
+                </p>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- FORM -->
+            <!-- ============================= -->
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <!-- AGE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        name="age"
+                        min="18"
+                        max="70"
+                        value="{{ age|default:'' }}"
+                        placeholder="Enter age"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- GENDER -->
+
+                <div class="form-group">
+
+                    <label>
+                        Gender
+                    </label>
+
+                    <select name="gender" required>
+
+                        <option value="">
+                            Select Gender
+                        </option>
+
+                        <option value="Male"
+                            {% if gender == "Male" %}selected{% endif %}>
+                            Male
+                        </option>
+
+                        <option value="Female"
+                            {% if gender == "Female" %}selected{% endif %}>
+                            Female
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- EDUCATION -->
+
+                <div class="form-group">
+
+                    <label>
+                        Education
+                    </label>
+
+                    <select name="education" required>
+
+                        <option value="">
+                            Select Education
+                        </option>
+
+                        <option value="Bachelors"
+                            {% if education == "Bachelors" %}selected{% endif %}>
+                            Bachelor's
+                        </option>
+
+                        <option value="Masters"
+                            {% if education == "Masters" %}selected{% endif %}>
+                            Master's
+                        </option>
+
+                        <option value="PhD"
+                            {% if education == "PhD" %}selected{% endif %}>
+                            PhD
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- JOB TITLE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Job Title
+                    </label>
+
+                    <select name="job_title" required>
+
+                        <option value="">
+                            Select Job Title
+                        </option>
+
+                        <option value="Junior Software Engineer"
+                            {% if job_title == "Junior Software Engineer" %}selected{% endif %}>
+                            Junior Software Engineer
+                        </option>
+
+                        <option value="Software Engineer"
+                            {% if job_title == "Software Engineer" %}selected{% endif %}>
+                            Software Engineer
+                        </option>
+
+                        <option value="Senior Software Engineer"
+                            {% if job_title == "Senior Software Engineer" %}selected{% endif %}>
+                            Senior Software Engineer
+                        </option>
+
+                        <option value="Web Developer"
+                            {% if job_title == "Web Developer" %}selected{% endif %}>
+                            Web Developer
+                        </option>
+
+                        <option value="Senior Web Developer"
+                            {% if job_title == "Senior Web Developer" %}selected{% endif %}>
+                            Senior Web Developer
+                        </option>
+
+                        <option value="Data Analyst"
+                            {% if job_title == "Data Analyst" %}selected{% endif %}>
+                            Data Analyst
+                        </option>
+
+                        <option value="Data Scientist"
+                            {% if job_title == "Data Scientist" %}selected{% endif %}>
+                            Data Scientist
+                        </option>
+
+                        <option value="Senior Data Scientist"
+                            {% if job_title == "Senior Data Scientist" %}selected{% endif %}>
+                            Senior Data Scientist
+                        </option>
+
+                        <option value="Project Manager"
+                            {% if job_title == "Project Manager" %}selected{% endif %}>
+                            Project Manager
+                        </option>
+
+                        <option value="System Administrator"
+                            {% if job_title == "System Administrator" %}selected{% endif %}>
+                            System Administrator
+                        </option>
+
+                        <option value="Engineering Manager"
+                            {% if job_title == "Engineering Manager" %}selected{% endif %}>
+                            Engineering Manager
+                        </option>
+
+                        <option value="Technology Director"
+                            {% if job_title == "Technology Director" %}selected{% endif %}>
+                            Technology Director
+                        </option>
+
+                        <option value="Senior Technology Director"
+                            {% if job_title == "Senior Technology Director" %}selected{% endif %}>
+                            Senior Technology Director
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- EXPERIENCE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Years of Experience
+                    </label>
+
+                    <input
+                        type="number"
+                        name="experience"
+                        min="0"
+                        max="50"
+                        value="{{ experience|default:'' }}"
+                        placeholder="Enter years of experience"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- DEPARTMENT -->
+
+                <div class="form-group">
+
+                    <label>
+                        Department
+                    </label>
+
+                    <select name="department" required>
+
+                        <option value="">
+                            Select Department
+                        </option>
+
+                        <option value="IT"
+                            {% if department == "IT" %}selected{% endif %}>
+                            IT
+                        </option>
+
+                        <option value="Management"
+                            {% if department == "Management" %}selected{% endif %}>
+                            Management
+                        </option>
+
+                        <option value="Engineering"
+                            {% if department == "Engineering" %}selected{% endif %}>
+                            Engineering
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ============================= -->
+                <!-- BUTTONS -->
+                <!-- ============================= -->
+
+                <div class="button-container">
+
+                    <button
+                        type="submit"
+                        class="predict-button">
+                        Predict Salary
+                    </button>
+
+
+                    <button
+                        type="reset"
+                        class="reset-button">
+                        Reset
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- ============================= -->
+            <!-- PREDICTION RESULT -->
+            <!-- ============================= -->
+
+            {% if form_submitted %}
+
+            <div class="result-card">
+
+                <h2>
+                    Predicted Salary
+                </h2>
+
+                <div class="salary">
+
+                    ₹ {{ prediction|floatformat:2 }}
+
+                </div>
+
+                <p>
+                    This is an estimated salary based on
+                    the trained machine-learning model.
+                </p>
+
+            </div>
+
+            {% endif %}
+
+
+            <!-- ============================= -->
+            <!-- ERROR -->
+            <!-- ============================= -->
+
+            {% if error %}
+
+            <div class="error-message">
+
+                {{ error }}
+
+            </div>
+
+            {% endif %}
+
+
+            <!-- FOOTER -->
+
+            <div class="footer">
+
+                Employee Salary Prediction Mini Project
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
