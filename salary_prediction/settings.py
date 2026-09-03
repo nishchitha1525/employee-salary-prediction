@@ -25,8 +25,9 @@ SECRET_KEY = 'django-insecure-@ut_*$2z=a01m7o72r)zq=w^%vf@1!ndy3%l-^t+5j3-d@uz*v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    "employee-salary-prediction-0s2q.onrender.com",
+]
 
 # Application definition
 
